@@ -140,3 +140,9 @@ footer {
 #preview.column {
   white-space: normal;
 }
+
+#divider {
+    width: 10px;
+    cursor: ew-resize;
+    background-color: #ccc;
+}
