@@ -277,17 +277,11 @@ This web site is using ${"`"}markedjs/marked${"`"}.
     let editorFlexBasisPercentage = (offsetX / containerWidth) * 100;
     let previewFlexBasisPercentage = 100 - editorFlexBasisPercentage;
 
-    console.log(`Editor Flex Basis: ${editorFlexBasisPercentage}%`);
-    console.log(`Preview Flex Basis: ${previewFlexBasisPercentage}%`);
+    // console.log(`Editor Flex Basis: ${editorFlexBasisPercentage}%`);
+    // console.log(`Preview Flex Basis: ${previewFlexBasisPercentage}%`);
 
     editorPane.style.flexBasis = `${editorFlexBasisPercentage}%`;
     preview.style.flexBasis = `${previewFlexBasisPercentage}%`;
-
-    let editorWidthPercentage = (offsetX / containerWidth) * 100;
-    let previewWidthPercentage = 100 - editorWidthPercentage;
-
-    editorPane.style.width = `${editorWidthPercentage}%`;
-    preview.style.width = `${previewWidthPercentage}%`;
   });
 
   document.addEventListener("mouseup", () => {
