@@ -263,7 +263,7 @@ This web site is using ${"`"}markedjs/marked${"`"}.
 
   const divider = document.getElementById("divider");
   const container = document.getElementById("container");
-  const editor = document.getElementById("edit");
+  const editorPane = document.getElementById("edit");
   const preview = document.getElementById("preview");
 
   divider.addEventListener("mousedown", (e) => {
@@ -277,7 +277,7 @@ This web site is using ${"`"}markedjs/marked${"`"}.
     let editorWidthPercentage = (offsetX / containerWidth) * 100;
     let previewWidthPercentage = 100 - editorWidthPercentage;
 
-    editor.style.width = `${editorWidthPercentage}%`;
+    editorPane.style.width = `${editorWidthPercentage}%`;
     preview.style.width = `${previewWidthPercentage}%`;
   });
 
