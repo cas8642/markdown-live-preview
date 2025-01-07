@@ -274,6 +274,15 @@ This web site is using ${"`"}markedjs/marked${"`"}.
     if (!isResizing) return;
     let containerWidth = container.offsetWidth;
     let offsetX = e.clientX;
+    let editorFlexBasisPercentage = (offsetX / containerWidth) * 100;
+    let previewFlexBasisPercentage = 100 - editorFlexBasisPercentage;
+
+    console.log(`Editor Flex Basis: ${editorFlexBasisPercentage}%`);
+    console.log(`Preview Flex Basis: ${previewFlexBasisPercentage}%`);
+
+    editorPane.style.flexBasis = `${editorFlexBasisPercentage}%`;
+    preview.style.flexBasis = `${previewFlexBasisPercentage}%`;
+
     let editorWidthPercentage = (offsetX / containerWidth) * 100;
     let previewWidthPercentage = 100 - editorWidthPercentage;
 
