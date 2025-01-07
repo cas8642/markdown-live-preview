@@ -257,3 +257,30 @@ This web site is using ${"`"}markedjs/marked${"`"}.
     let scrollBarSettings = loadScrollBarSettings() || false;
     initScrollBarSync(scrollBarSettings);
 });
+
+
+let isResizing = false;
+
+const divider = document.getElementById('divider');
+const container = document.getElementById('container');
+const editor = document.getElementById('edit');
+const preview = document.getElementById('preview');
+
+divider.addEventListener('mousedown', (e) => {
+    isResizing = true;
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isResizing) return;
+    let containerWidth = container.offsetWidth;
+    let offsetX = e.clientX;
+    let editorWidthPercentage = (offsetX / containerWidth) * 100;
+    let previewWidthPercentage = 100 - editorWidthPercentage;
+
+    editor.style.width = `${editorWidthPercentage}%`;
+    preview.style.width = `${previewWidthPercentage}%`;
+});
+
+document.addEventListener('mouseup', () => {
+    isResizing = false;
+});
